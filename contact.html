@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ISLWeb - Contact Page</title>
+        <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" >  
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">      
+        <link rel="stylesheet" href="css/screen.css" type="text/css">
+    </head>
+    <body>
+        <!--Header and Menu area-->
+        <header class="l-header">            
+            <div class="wrap">
+                <div class="l-header-logo">
+                    <a href="index.html"><img src="img/logo.png" alt="Logo" title="Logo"></a>
+                </div>
+                <div class="l-header-nav-menu">                    
+                    <div class="l-header-ham-menu" id="men-ham"><!--class and id for chang hamburger into cross-->
+                        <span class="ham-cross"></span><!--hamburger menu icon selfmade with after and before-->
+                    </div>                    
+                    <nav class="l-header-menu" id="men-nav"><!--class and id for chang menu on/off-->
+                        <ul>
+                            <li><a href="index.html">home</a></li>
+                            <li><a href="about.html">about</a></li>
+                            <li><a href="portfolio.html">portfolio</a></li>
+                            <li><a href="blog.html">blog</a></li>
+                            <li><a href="#" class="is-active">contact</a></li>                        
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <!--Main area-->
+        <main id="main-content" class="l-main-menu"> <!--Class and ID for filter effect by hamburger menu-->
+            <div class="m-contact-bg-color">
+                <section class="m-contact-navigation">
+                    <div class="m-contact-navigation-content">
+                        <h1>contact</h1>
+                        <div class="m-contact-navigation-content-nav">
+                            <nav>
+                                <ul>
+                                    <li><a href="index.html">home</a></li>
+                                    <li><span class="lnr lnr-arrow-right"></span></li>
+                                    <li><a href="contact.html">contact</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </section>
+                <section class="m-contact">
+                    <div class="m-contact-content">
+                        <div class="row">
+                            <div class="col-12 col-md-12 col-lg-12">
+                                <div class="m-contact-address-google-map">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3088.837495795633!2d-80.25428368477914!3d39.26925357951505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x884a67b8d5228d45%3A0xf2774ba637e457e9!2s4343%20Hinkle%20Lake%20Rd%2C%20Bridgeport%2C%20WV%2026330%2C%20USA!5e0!3m2!1sde!2sbe!4v1587027192551!5m2!1sde!2sbe" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-4 col-lg-4">
+                                <div class="m-contact-address-content">
+                                    <div class="m-contact-address-content-box">
+                                        <div class="m-contact-address-content-box-icon">
+                                            <span class="lnr lnr-home"></span>
+                                        </div>
+                                        <div class="m-contact-address-content-box-address box">
+                                            <h3>Binghamton, New York</h3>
+                                            <p>
+                                                4343 Hinkle Deegan Lake Road
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="m-contact-address-content-box">
+                                        <div class="m-contact-address-content-box-icon">
+                                            <span class="lnr lnr-phone-handset"></span>
+                                        </div>
+                                        <div class="m-contact-address-content-box-tel-text box">
+                                            <h3>00 (958) 9865 562</h3>
+                                            <p>
+                                                Mon to Fri 9am to 6pm
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="m-contact-address-content-box">
+                                        <div class="m-contact-address-content-box-icon">
+                                            <span class="lnr lnr-envelope"></span>
+                                        </div>
+                                        <div class="m-contact-address-content-box-tel-mail box">
+                                            <h3>support@colorlib.com</h3>
+                                            <p>
+                                                Send us your query everytime
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-8 col-lg-8">
+                                <div class="m-contact-form">
+                                    <form action="#" method="POST" class="form">                                    
+                                        <div class="m-contact-form-content-general">
+                                            <div class="m-contact-form-content-general-box">
+                                                <input placeholder="Enter your name" type="text" name="name">
+                                            </div>
+                                            <div class="m-contact-form-content-general-box">
+                                                <input placeholder="Enter email address" type="email" name="email">
+                                            </div>
+                                            <div class="m-contact-form-content-general-box">
+                                                <input placeholder="Enter subject" type="text" name="subject">
+                                            </div>
+                                        </div>                                    
+                                        <div class="m-contact-form-content-message">
+                                            <div class="m-contact-form-content-message-box">
+                                                <textarea placeholder="Enter message" name="message"></textarea>
+                                            </div>
+                                            <div class="m-contact-form-content-message-submit">
+                                                <input type="submit" value="Send message" class="sub">
+                                            </div>                
+                                        </div>                                       
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+        <footer class="l-footer">
+            <div class="wrap">
+                <div class="row">
+                    <div class="col-12 col-md-5 col-lg-5">
+                        <div class="l-footer-about-me">
+                            <h3>about me</h3>
+                            <p>
+                                We have tested a number of registry fix and clean utilities and present our top 3 list on our site for your convenience.
+                            </p>
+                            <p>
+                                Copyright <i class="far fa-copyright"></i>2020 All rights reserved by <span class="text-decoration">Alain Niessen</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-4">
+                        <div class="l-footer-newsletter">
+                            <h3>newsletter</h3>
+                            <p>
+                                Stay updated with our latest trends
+                            </p>
+                            <div class="l-footer-newsletter-email">
+                                <form action="#" method="POST" class="l-footer-newsletter-form">                                
+                                    <input type="email" placeholder="Enter Email Address" name="email"> 
+                                    <!--Aria label for arrow description for support accessibility--> 
+                                    <button type="submit" aria-label="submit"><span class="lnr lnr-arrow-right" ></span></button>                                  
+                                </form>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-3 col-lg-3">
+                        <div class="l-footer-social-media">
+                            <h3>follow me</h3>
+                            <p>
+                                Let us be social
+                            </p>
+                            <nav>
+                                <ul> <!--Link to Html to prevent visual bug on smartphone (hover-effect-frozen)-->
+                                    <li><a href="contact.html"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="contact.html"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="contact.html"><i class="fab fa-dribbble"></i></a></li>
+                                    <li><a href="contact.html"><i class="fab fa-behance"></i></a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>        
+    <!--Implication Javascript-->
+    <script src="js/main.js"></script>
+    </body>
+</html>

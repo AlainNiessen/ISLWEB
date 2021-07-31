@@ -1,0 +1,47 @@
+1) DEFINITION
+
+SASS peut être vu comme du CSS "plus". Avec SASS nous allons ajouter des concepts de 
+programmation qui vont faciliter l'organisation de notre code. SASS est un langage, qui 
+n'est actuellement pas directement interprété par le navigateur. Nous allons donc devoir 
+le transpiler, convertir du format SASS au format CSS.
+
+2) TRANSPILER
+
+Pour transpiler le fichier SASS en fichier CSS nous allons avoir besoin du terminal, de node JS
+
+ a) entrez la commande "node -v"
+
+    => si node est bien installé vous devez avoir le numéro de version qui s'affiche
+    => si ce n'est pas le cas vous devez installer node.js => https://nodejs.org/en/download/
+    => N'oubliez pas de fermer tous les vos terminaux avant de relancer la commande
+
+ b) entre la commande "node-sass -v"
+
+    => Si vous ne recevez pas de numéro en réponse, vous devez installer node-sass
+    => entrez la commande: "npm install -g node-sass"
+        => npm est le gestionnaire de dépendance pour node.js, le paramètre -g indique qu'on souhaite
+           installer le packet et node-sass globalement sur tout notre système
+
+ c) LANCER node-sass
+
+    Attention à bien vous trouver dans le dossier contenant votre projet. le lus facile sur Windows 10 ets de cliquer
+    depuis l'explorateur sur Fichier > Ouvrir Windows PowerShell
+
+    => Mainenant entrez la commande: "node-sass sass/screen.scss css/screen.css"
+       => Cette commande indique qu'on doit récupérer le fichier sass/screen.scss pour le convertire en css/screen.css
+
+    Lorsque vous allez travailler, il est probable que vous allez effectuer de nombreuses modifications. Pour ne pas devoir lancer 
+    continuellement cette commande, vous pouvez ajouter à la fin "--watch". cette commande permet d'observer le changement effectué 
+    sur votre projet.
+
+3) SASS sur un  dossier
+
+Si vous souhaitez observer ou transpiler un dossier complet vous pouvez utiliser cette commande: "node-sass sass -o css".
+Le paramètre -o (ou --output) permet d'indiquer le dossier ou exporter.
+Si vous souhaitez "observer" => "node-sass sass -o css --watch"
+
+4) HELP
+
+Pour obtenir plus des informations sur l'utilisation de node-sass
+
+    => "node-sass -h" ou "node-sass --help"

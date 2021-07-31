@@ -1,0 +1,86 @@
+//mini reset
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+//base tags
+html {
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;    
+}
+
+body {    
+    width: 100%;
+    background-color: map-get($map: $colors, $key: 'couleur3');
+}
+
+main {
+    margin-top: 3rem; //For beeing directly after header and no beyond the header, the header is fixed and move with by scrolling down the page
+}
+
+img {
+    width: 100%;
+}
+
+h1 {
+    font-size: nth($fontsize, 1);    
+}
+
+h2 {
+    font-size: nth($fontsize, 2);
+}
+
+h3 {
+    font-size: nth($fontsize, 3);
+}
+
+p {
+    color: map-get($map: $colors, $key: 'txt');
+}
+
+.wrap { //wrap for header and footer
+    width: 100%;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+form {
+    margin: 0;
+    padding: 0;
+}
+
+aside {
+    border: 0.8px solid #eee;
+}
+
+time {
+    color: map-get($map: $colors, $key: 'txt');
+}
+
+//Base for button in personal-details section home page
+.btn {
+    text-decoration: none;
+    color: map-get($map: $colors, $key: 'couleur3');
+    display: block;
+    padding: .7rem 3rem;
+    background-color: map-get($map: $colors, $key: 'btn1'); //For browsers that do not support gradients
+    background-image: linear-gradient(to right, map-get($map: $colors, $key: 'btn1'), map-get($map: $colors, $key: 'btn2') ); //For gradient effect
+    text-transform: uppercase;
+    border: none;
+    &:hover {
+        background-color: map-get($map: $colors, $key: 'btn1'); //For browsers that do not support gradients
+        background-image: linear-gradient(to left, map-get($map: $colors, $key: 'btn1'), map-get($map: $colors, $key: 'btn2') ); //For gradient effect
+    }
+}
+
+//Media Query for large pc
+@media screen and (min-width: 1200px) {
+    .wrap { //wrap for header and footer
+        width: 100%;
+        max-width: 1140px;
+        margin: 0 auto;
+    }
+}
+

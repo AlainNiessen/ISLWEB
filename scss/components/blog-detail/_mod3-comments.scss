@@ -1,0 +1,96 @@
+//3rd single module in blog-detail page and 3rd module in main content - comments
+.m-blog-detail-comments {
+    border: 0.8px solid #eee;  
+    margin-bottom: 3rem;  
+    h3 {
+        text-transform: capitalize;
+        text-align: center;
+        padding: 2rem 0;
+    }
+}
+
+.m-blog-detail-comments-box {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 1rem 0;
+}
+
+.m-blog-detail-comments-box-user {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    .m-blog-detail-comments-box-user-illustration{
+        width: 15%;          
+    }    
+    .m-blog-detail-comments-box-user-content {
+        width: 80%;
+        p:first-child {
+            color: black;
+            font-weight: bold;
+        }
+        p:nth-child(2) {
+            opacity: 0.5;
+            font-size: 0.6rem;
+        }
+        p:last-child {
+            padding: 1rem 0;
+            font-size: 0.8rem;
+        }
+    }    
+}
+    
+.m-blog-detail-comments-box-reply-btn {
+    padding-right: 0.3rem;
+    a {
+        text-decoration: none;
+        text-transform: uppercase;
+        color: black;
+        border: 0.8px solid #eee; 
+        padding: 0.3rem 1.4rem; 
+        font-weight: bold; 
+        background-color: map-get($map: $colors, $key: 'couleur3'); 
+        &:hover {
+            color: map-get($map: $colors, $key: 'title');
+        }          
+    }
+}
+
+
+.m-blog-detail-comments-box:nth-child(3), .m-blog-detail-comments-box:nth-child(4) {
+    padding-left: 2rem;
+}
+
+//Media Query for tablette
+@media screen and (min-width: 768px) {    
+    .m-blog-detail-comments-box {
+        .m-blog-detail-comments-box-content {        
+            p:last-child {
+                padding: 2rem 0 1rem 0;
+            }
+        }
+    }
+}
+
+//Media Query for pc
+@media screen and (min-width: 992px) {
+    .m-blog-detail-comments-box {
+        .m-blog-detail-comments-box-user {
+            .m-blog-detail-comments-box-user-illustration{
+                width: 10%;          
+            }    
+            .m-blog-detail-comments-box-user-content {
+                width: 85%;
+            }
+        }
+        .m-blog-detail-comments-box-reply-btn {
+            padding-right: 1rem;
+        }
+    }
+}
+
+
+
+

@@ -1,0 +1,126 @@
+//1st single module in contact page - contact info and formular
+.m-contact-content {
+    @include wrap1($width1, $max-width1, $margin1);
+    margin-top: 5rem;
+}
+
+.m-contact-address-google-map {
+    iframe {
+        width: 100%;
+        height: 30rem;
+        display: block;
+        margin-top: 4rem;
+        border: none;
+    }
+}
+
+.m-contact-address-content {
+    margin-top: 3rem;
+}
+
+//Display flex for two elements (icon and text) in row
+.m-contact-address-content-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.m-contact-address-content-box-icon {
+    flex-grow: 1;
+    span {
+        font-size: 2rem;
+        color: map-get($map: $colors, $key: 'title');
+    }
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 5;
+    height: 5rem;
+    p {
+        font-size: .7rem;
+    }
+}
+
+.m-contact-address-content-box-address, .m-contact-address-content-box-tel-mail {
+    padding-left: .9rem;
+}
+
+.form {    
+    display: flex;
+    flex-direction: column;    
+    margin-top: 2.5rem;
+    width: 100%;
+}
+
+.m-contact-form-content-general, .m-contact-form-content-message {
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+//width for boxes input, textarea 100% (100% of available space)
+.m-contact-form-content-general-box{
+    width: 100%;
+    input {
+        width: 100%;
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+        color: map-get($map: $colors, $key: 'txt');
+    }
+}
+
+.m-contact-form-content-message-box{
+    width: 100%;
+    textarea {
+        width: 100%;
+        height: 12.8rem;
+        color: map-get($map: $colors, $key: 'txt');
+        padding: 1rem;
+        margin-bottom: 3rem;
+    }
+}
+
+.m-contact-form-content-message-submit {
+    text-align: right;
+    .sub {
+        text-transform: uppercase;
+        font-weight: bold;
+        color: map-get($map: $colors, $key: 'couleur3');
+        background-color: map-get($map: $colors, $key: 'btn1'); //For browsers that do not support gradients
+        background-image: linear-gradient(to right, map-get($map: $colors, $key: 'btn1'), map-get($map: $colors, $key: 'btn2') ); //For gradient effect        
+        padding: .7rem 2rem;
+        border: none;
+        &:hover {
+            background-color: map-get($map: $colors, $key: 'btn1'); //For browsers that do not support gradients
+            background-image: linear-gradient(to left, map-get($map: $colors, $key: 'btn1'), map-get($map: $colors, $key: 'btn2') ); //For gradient effect
+        }
+    }
+}
+
+
+//Media Query for tablette
+@media screen and (min-width: 768px) {
+    .m-contact-address-content-box-icon {
+        span {
+            font-size: 1.5rem;
+        }
+    }
+    .form {    
+        display: flex;
+        flex-direction: row;
+        margin-top: 4rem;
+        justify-content: space-between;
+    }
+    .m-contact-form-content-general {
+        margin-right: 2rem;
+    }
+}
+
+//Media Query for large pc
+@media screen and (min-width: 1200px) {
+    .m-contact-content {
+        @include wrap2($width2, $max-width2, $margin2);
+    }
+}    

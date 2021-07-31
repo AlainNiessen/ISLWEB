@@ -1,0 +1,117 @@
+//1st single module in home page - personal detail
+.m-home-personal-details-content-1{
+    background-color: #f6f6fc; //Color copy by using pipette on photoshop   
+    padding-top: 3rem; 
+}
+
+.m-home-personal-details-content-islstudent, .m-home-personal-details-content-personaldetails {
+    @include wrap1($width1, $max-width1, $margin1);        
+}
+
+.m-home-personal-details-content-islstudent-infobox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;    
+    height: 25rem;
+    h1, h3 {
+        text-transform: uppercase;
+        }    
+    h3, h1, p {
+        margin-bottom: 1rem;
+    }    
+}
+
+.m-home-personal-details-content-islstudent-illustration {    
+    color: #f6f6fc;
+    text-align: center;
+    img {
+        width: 80%;
+    } 
+     
+}
+
+.m-home-personal-details-content-personaldetails {
+    padding-top: 4rem;
+}
+
+.m-home-personal-details-content-personaldetails-illustration {
+    padding-top: 5rem;    
+}
+
+.m-home-personal-details-content-personaldetails-infobox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: 25rem;        
+    h2, h3 {
+        text-transform: uppercase;
+        }    
+    h2, h3, p {
+        margin-bottom: 1rem;
+    }    
+}
+
+//Media Query for tablette
+@media screen and (min-width: 768px) {
+    .m-home-personal-details-content-islstudent, .m-home-personal-details-content-personaldetails {
+        height: 30rem;        
+    }
+   
+    .m-home-personal-details-content-islstudent-illustration {
+        padding: 0;
+        height: 30rem;
+        img {
+            width: 90%;
+            height: 30rem;
+            padding: 0;
+        }        
+    } 
+    .m-home-personal-details-content-islstudent-infobox {
+        height: 30rem;
+        justify-content: flex-start;
+        padding-top: 3rem;
+    }   
+    .m-home-personal-details-content-personaldetails-infobox {
+        height: 24rem;  
+        justify-content: flex-end;  
+        padding-bottom: 2rem;       
+    }   
+    .m-home-personal-details-content-personaldetails-illustration {
+        height: 24rem;
+        padding: 0;
+        img {
+            width: 100%;
+            height: 24rem;
+            
+        }        
+    }
+}
+
+//Media Query for pc
+@media screen and (min-width: 992px) {   
+    .m-home-personal-details-content-personaldetails-infobox {
+        padding-top: 0;               
+    } 
+    .m-home-personal-details-content-islstudent-illustration {
+        img {
+            width: 70%;
+        }        
+    } 
+    .m-home-personal-details-content-personaldetails-illustration {
+        img {
+            width: 80%;
+            height: 24rem;
+            
+        }        
+    }
+    
+}
+
+//Media Query for large pc
+@media screen and (min-width: 1200px) {
+    .m-home-personal-details-content-islstudent, .m-home-personal-details-content-personaldetails {
+        @include wrap2($width2, $max-width2, $margin2);
+    }
+}    

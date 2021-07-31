@@ -1,0 +1,54 @@
+/*Looping module in about page, contact page, portfolio page and blog-detail page - navigation
+    => modules with same settings and with possibility to change with if-condition
+    => in case of individual changing => if condition*/
+@each $page in $navigation {
+    .m-#{$page}-navigation {
+        background-color: map-get($map: $colors, $key: 'btn1'); //For browsers that do not support gradients
+        background-image: linear-gradient(to right, map-get($map: $colors, $key: 'btn1'), map-get($map: $colors, $key: 'btn2') ); //For gradient effect
+        height: 15rem;
+    }    
+    .m-#{$page}-navigation-content {
+        @include wrap1($width1, $max-width1, $margin1);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 15rem;
+        h1 {
+            color: map-get($map: $colors, $key: 'couleur3');
+            text-transform: capitalize;
+        }
+    }    
+    .m-#{$page}-navigation-content-nav {
+        ul {
+            padding: 0;
+            margin: 0;
+        }
+        li {
+            list-style: none;
+            display: inline-block;
+        }
+        a {
+            text-decoration: none;
+            display: inline-block;
+            padding: 1rem;
+            color: map-get($map: $colors, $key: 'couleur3');
+            text-transform: capitalize;
+            &:hover {
+                color: map-get($map: $colors, $key: 'txt');
+            }
+        }
+        span {
+            color: map-get($map: $colors, $key: 'couleur3'); 
+        }
+    }
+}
+
+//Media Query for large pc
+@media screen and (min-width: 1200px) {
+    @each $page in $navigation {
+        .m-#{$page}-navigation-content {
+            @include wrap2($width2, $max-width2, $margin2);
+        }
+    }
+}

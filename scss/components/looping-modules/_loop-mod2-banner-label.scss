@@ -1,0 +1,59 @@
+/*Looping module in home page and about page - banner-label
+    => modules with same settings and with possibility to change with if-condition
+    => in case of individual changing => if condition*/
+@each $page in $banner {
+    .m-#{$page}-banner-labels {
+        width: 100%;
+        height: 10rem;
+        background-color: map-get($map: $colors, $key: 'btn1'); //For browsers that do not support gradients
+        background-image: linear-gradient(to right, map-get($map: $colors, $key: 'btn1'), map-get($map: $colors, $key: 'btn2') ); //For gradient effect
+    }    
+    .m-#{$page}-banner-labels-content {
+        @include wrap1($width1, $max-width1, $margin1);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 10rem;
+        a {
+            opacity: .5;
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }    
+    @for $i from 2 through 5 {
+        .box-#{$i} {
+            display: none;        
+        }
+    }
+}
+    
+//Media Query for tablette
+@media screen and (min-width: 768px) {
+    @each $page in $banner {
+        @for $i from 2 through 5 {
+            .box-#{$i} {
+                display: block;
+            }
+        }   
+        .m-#{$page}-banner-labels {
+            height: 12rem;
+        }
+        .m-#{$page}-banner-labels-content {
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            height: 12rem;
+        }       
+    }
+}
+
+//Media Query for large pc
+@media screen and (min-width: 1200px) {
+    @each $page in $banner {
+        .m-#{$page}-banner-labels-content {
+            @include wrap2($width2, $max-width2, $margin2);
+        }
+    }
+}    

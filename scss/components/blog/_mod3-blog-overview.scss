@@ -1,0 +1,136 @@
+//3rd module in blog page and 1st module in main content - articles
+.m-blog-main {
+    @include wrap1($width1, $max-width1, $margin1);
+    margin-top: 4rem;
+}
+
+.m-blog-main-content-box {
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.m-blog-main-content-box-intro-title {
+    h3 {
+        color: black;
+        margin-bottom: 2rem;
+        font-size: 1rem;
+    }
+}
+
+.m-blog-main-content-box-intro-info {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    p, time {
+        width: 50%;
+        margin-bottom: 1rem;
+        span {
+            color: black;
+            font-weight: bold;
+            padding-left: .5rem;
+        }
+    }    
+}
+
+.m-blog-main-content-box-article {
+      h2 {
+        text-transform: capitalize;
+        margin: 1rem 0;
+        a {
+            text-decoration: none;
+            color: black;        
+            &:hover {
+                color: map-get($map: $colors, $key: 'title');
+            }
+        }
+    }
+}
+
+.m-blog-main-content-box-link {
+    text-decoration: none;
+    color: black;
+    background-color: map-get($map: $colors, $key: 'couleur3');
+    padding: .8rem 1.5rem;
+    margin: 1rem 0 0 1rem;
+    text-transform: capitalize;
+    display: inline-block;
+    &:hover {
+        color: map-get($map: $colors, $key: 'title');
+    }
+}
+
+.m-blog-main-content-page-slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10rem;
+    ul {
+        padding: 0;
+        margin: 0;
+    }
+    li {
+        list-style: none;
+        display: inline-block;
+    }
+    a {
+        text-decoration: none;
+        display: inline-block;
+        padding: .5rem 1rem;
+        color: map-get($map: $colors, $key: 'txt');
+        &:hover {
+            background-color: map-get($map: $colors, $key: 'title');
+            color: map-get($map: $colors, $key: 'couleur3');
+        }
+    }
+    a.is-active {
+        background-color: map-get($map: $colors, $key: 'title');
+        color: map-get($map: $colors, $key: 'couleur3');
+    }
+    span {
+        color: map-get($map: $colors, $key: 'txt'); 
+    }
+}
+
+//Media Query for tablette
+@media screen and (min-width: 768px) { 
+    .m-blog-main-content-box-intro   {
+        text-align: right;
+        padding-right: 1rem;
+    } 
+    .m-blog-main-content-box-intro-title {
+        p {
+            margin-bottom: .5rem;
+        }
+    } 
+    .m-blog-main-content-box-intro-info {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        p, time {
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+    }    
+}
+
+//Media Query for pc
+@media screen and (min-width: 992px) {
+    .m-blog-main-content-box-intro-title {
+        p {
+            margin-bottom: 2rem;
+        }
+    } 
+    .m-blog-main-content-box-intro-info { 
+        p {
+            margin-bottom: 1rem;
+        }
+    }    
+}
+
+
+//Media Query for large pc
+@media screen and (min-width: 1200px) {
+    .m-blog-main {
+        @include wrap2($width2, $max-width2, $margin2);
+    }    
+}    

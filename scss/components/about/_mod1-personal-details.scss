@@ -1,0 +1,73 @@
+//1st single module in about me page - personal details
+.m-about-personal-details-content {
+    @include wrap1($width1, $max-width1, $margin1);
+}
+
+.m-about-personal-details-content-personaldetails {
+    margin-top: 5rem;
+}
+
+
+
+.m-about-personal-details-content-personaldetails-infobox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;    
+    height: 25rem;   
+    h2, h3 {
+        text-transform: uppercase;
+        }    
+    h2, h3, p {
+        margin-bottom: 1rem;
+    }    
+}
+
+.m-about-personal-details-content-text {
+    p {
+        margin: 3rem 0;
+    }
+}
+
+
+//Media Query for tablette
+@media screen and (min-width: 768px) {
+    .m-about-personal-details-content-personaldetails {
+        height: 24rem;        
+    }
+    .m-about-personal-details-content-personaldetails-infobox {
+        height: 24rem;  
+        justify-content: flex-end;  
+        padding-bottom: 2rem;       
+    }   
+    .m-about-personal-details-content-personaldetails-illustration {
+        height: 24rem;
+        padding: 0;
+        img {
+            width: 100%;
+            height: 24rem;
+            
+        }        
+    }
+}
+
+//Media Query for pc
+@media screen and (min-width: 992px) {
+    .m-about-personal-details-content-personaldetails-illustration {
+        img {
+            width: 90%;
+            height: 24rem;
+            
+        }        
+    }
+}
+
+//Media Query for large pc
+@media screen and (min-width: 1200px) {
+    .m-about-personal-details-content {
+        @include wrap2($width2, $max-width2, $margin2);
+    }
+    .m-about-personal-details-content-personaldetails-infobox {
+        padding-top: 5rem;
+    }
+}    

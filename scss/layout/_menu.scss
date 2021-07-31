@@ -1,0 +1,180 @@
+//l- for Layout all Navigationmenu in Smartphone view
+.l-header-ham-menu {
+    display: block;
+    height: 5rem;
+    position: relative;    
+}
+//installation for changing hamburger into cross
+.l-header-ham-menu .ham-cross {
+    //middle bar from hamburger
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%);
+    -webkit-transform: translate(-50%);
+    -moz-transform: translate(-50%);
+    -ms-transform: translate(-50%);
+    -o-transform: translate(-50%);
+    right: 0;
+    height: 3px;
+    width: 20px;
+    background-color: map-get($map: $colors, $key: 'txt');
+    transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -ms-transition: all 0.4s;
+    -o-transition: all 0.4s;
+}
+.l-header-ham-menu .ham-cross::after {
+    //bottom bar from hamburger
+    content:"";
+    position: absolute;
+    bottom: -5px;
+    height: 3px;
+    width: 20px;
+    background-color: map-get($map: $colors, $key: 'txt');
+    transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -ms-transition: all 0.4s;
+    -o-transition: all 0.4s;
+}
+.l-header-ham-menu .ham-cross::before {
+    //top bar from hamburger
+    content:"";
+    position: absolute;
+    top: -5px;
+    height: 3px;
+    width: 20px;
+    background-color: map-get($map: $colors, $key: 'txt');
+    transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -ms-transition: all 0.4s;
+    -o-transition: all 0.4s;
+}
+.l-header-ham-menu.cross>.ham-cross {
+    //first change middle bar into white
+    background-color: map-get($map: $colors, $key: 'couleur3');
+    transition: background-color 0.4s;
+    -webkit-transition: background-color 0.4s;
+    -moz-transition: background-color 0.4s;
+    -ms-transition: background-color 0.4s;
+    -o-transition: background-color 0.4s;
+}
+.l-header-ham-menu.cross>.ham-cross::after {
+    //second change bottom bar rotate-45deg
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    bottom: 0;
+    transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -ms-transition: all 0.4s;
+    -o-transition: all 0.4s;
+}
+.l-header-ham-menu.cross>.ham-cross::before {
+    //third change top bar rotate 45deg
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    top: 0;
+    transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -ms-transition: all 0.4s;
+    -o-transition: all 0.4s;
+}
+//installation blur filter on main section while click on hamburger menu
+.l-main-menu {
+    filter: none;
+    -webkit-filter: none;
+}
+.l-main-menu.is-active {
+    filter: blur(4px) grayscale(70%);
+    -webkit-filter: blur(4px) grayscale(70%);
+}
+//installation menu hamburger
+.l-header-menu {
+    display: none;
+    position: absolute;
+    background-color: black;
+    left: 0;
+    top: 0;
+    width: 75%;
+    height: 100vh; 
+    opacity: 0.9;
+    z-index: 99999;
+    ul {
+        padding: 0;
+        margin: 0;       
+    }
+    li {
+        list-style: none;
+        display: block;
+    }
+    a {
+        text-decoration: none;
+        text-transform: uppercase;
+        color: map-get($map: $colors, $key: 'txt');
+        display: block;
+        padding: 1rem .6rem;
+    } 
+    a.is-active {
+        color: map-get($map: $colors, $key: 'title');
+    }
+    a:hover {
+        color: map-get($map: $colors, $key: 'title');
+    }
+}
+.l-header-menu.is-active {
+    display: block;
+    animation: animation .4s;
+    -webkit-animation: animation .4s;
+}
+//animation effect on menu from left to right
+@keyframes animation {
+    from {
+        transform: translate(-500px);
+        -webkit-transform: translate(-500px);
+        -moz-transform: translate(-500px);
+        -ms-transform: translate(-500px);
+        -o-transform: translate(-500px);
+}
+    to {
+        transform: translate(0px);
+        -webkit-transform: translate(0px);
+        -moz-transform: translate(0px);
+        -ms-transform: translate(0px);
+        -o-transform: translate(0px);
+    }
+}
+
+//Media Query for Menu
+@media screen and (min-width: 768px) {
+    .l-header-ham-menu {
+        display: none;
+    }
+    .l-header-menu {
+        display: block;
+        position: static;
+        background-color: transparent;
+        opacity: 1;
+        width: 100%;
+        height: auto;
+        li, a {
+            display: inline-block;
+        }
+        a {
+            color: black;
+            font-size: .8rem;
+        }
+    }
+}
+
+
+

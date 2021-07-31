@@ -1,0 +1,55 @@
+INFORMATIONS SUR LE TRAVAIL FINAL
+
+1) CONSIGNES
+
+- Largeur maximale: 1140px => Pour le header et le footer, j'ai défini une classe "wrap" dans le fichier de base.
+                              Ce wrap prends 90% de "max-width" jusqu'à la taille de l'écran de 1200px, après en utilisant un Media Query
+                              (min-width: 1200px), j'ai donné une largeur maximale de 1140px. Comme ça, il y a toujours une marge et cette
+                              marge ne va jamais dépasser 1140px. Pour les modules, j'ai fait un peu différent, j'ai précisé les mêmes valeurs
+                              (90% et 1140px) dans deux fonctions mixins et j'ai les introduit dans les modules qui ont besoin.
+
+- Font-family: est défini dans la base (Poppins, sans sérif) pris par Google font
+
+- Font-size: est défini dans la base (html) à 16px et sert comme base pour les REM
+
+- Couleurs: la liste de couleurs fournie par le graphiste a été transformé en tableau de variables. Je n'ai pas ajouté des couleurs à ce tableau, par
+            contre les couleurs qui n'étaient pas défini dans ce tableau, ont été pris par la pipette en Photoshop ou demandé directement au graphiste.
+
+2) StRUCTURE SASS
+
+- Comment installer Sass et comment transpiler/convertrir => regarder sass.txt
+
+- J'ai choisi une structure de base simple:
+
+    - dossier "base": avec des informations de base (base, variables, mixins, grid). 
+
+    - dossier"layout": avec des fichier qui travaillent sur le Layout (header, footer et menu). Le menu est un peu plus grand, parce qu'il  
+      prend en charge toutes les animations en lien avec le menu Hamburger.
+
+    - dossier "components": avec des fichier qui travaillent sur les différents modules. Ici j'ai décidé de travailler en partie avec des modules
+      "uniques", c'est-à-dire qui sont dans leur structure unique. Les modules uniques se trouvent dans de dossiers qui portent le nom de la page 
+      correspondante. 
+      En plus, j'ai installé un dossier pour des modules qui apparaissent plusieurs fois dans le travail et qui ont exactement la
+      même structure. J'ai précis dans le fichier "varaibles" des lists de variables et avec ces lists de variables, j'ai bouclé des modules qui se repétent. 
+      J'ai encore expliqué cette methode en détail avec des commentaires dans le travail
+
+3) GRID
+
+- Pour mieux structurer les éléments sur les pages, j'ai introduit un système de grille fait par moi-même. Ce système prends 
+  en charge trois point de "break" (768px pour passer du smartphone à la tablette, 990px pour passer de la tablette au PC et 
+  1200px pour passer du PC au PC large).
+
+4 ) LANGUAGE
+
+- Comme le travail est en anglais, tous les commentaires à l'intérieur sont en anglais aussi.
+
+5) LIENS
+
+- Les liens (surtout les point de menu, certains titres et les icons de Social Media) ont un effet hover (ils changent la couleur). 
+  En plus, il y a une animation pour les images dans "portfolio" et pour les mêmes images sur la page d'accueil. 
+
+- Bug visuel: Quand un lien améne à nulle part, en conséquence en touchant sur l'écran du smartphone et tablette, ce lien reste actif. 
+              En conséquence, l'effet de hover reste "incrusté". Pour résoudre ce problème, j'ai lié ces liens qui aménent à nulle part
+              avec le HTML de la même page, comme ça le liens aménent quand même quelque part et le bug visuel disparaît.
+
+

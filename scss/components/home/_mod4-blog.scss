@@ -1,0 +1,128 @@
+//4th single module in home page - latest posts from our blog
+.m-home-blog {    
+    margin-top: 2rem;
+    background-color: #f6f6fc; //Color copy by using pipette on photoshop
+    padding-bottom: 5rem;
+}
+
+.m-home-blog-content {
+    @include wrap1($width1, $max-width1, $margin1);
+    padding-top: 0.5rem;
+}
+
+.m-home-blog-intro-text, .m-home-blog-area-box {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.m-home-blog-intro-text h1{
+    margin-bottom: 1.5rem;
+    text-transform: capitalize;
+}
+
+.m-home-blog-area-box-information {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid map-get($map: $colors, $key: 'txt');
+    padding-bottom: .4rem;
+    img {
+        width: 20%;
+    }
+}
+
+.m-home-blog-area-box-information-statistic {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; 
+    p, span {
+        margin: 0 0.2rem;
+    }
+    
+}
+
+.m-home-blog-area-box-information-person {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    p {
+        margin: 0 0 0 0.5rem;
+        color: black;
+    }
+}
+
+.m-home-blog-area-box-text {
+    margin-top: 2rem;
+    text-align: left;
+    h3 {
+        text-transform: uppercase;
+    }
+    a {
+        text-decoration: none;
+        color: black;
+    }
+    a:hover {
+        color: map-get($map: $colors, $key: 'title');
+    }
+}
+
+//Each loop for background images in blog section
+@for $i from 1 through 3 {
+    .m-home-blog-area-box-illustration-#{$i} {
+        background: url('../img/blog-illustration-#{$i}.jpg') no-repeat center center;
+        background-size: cover;
+        width: 100%;
+        height: 220px;        
+        margin-bottom: .4rem;
+    }
+}
+
+//Media Query for tablette
+@media screen and (min-width: 768px) {    
+    .m-home-blog-intro-text {
+        width: 100%;
+        max-width: 70%;
+        margin: 3rem auto;        
+    }
+    .m-home-blog-area-box {
+        margin: 0 1rem 2rem 1rem;
+    }
+    .m-home-blog-area-box-information-person {
+        p {
+            margin: 0 0 0 0.3rem;
+            font-size: .7rem;
+        }
+    }
+    .m-home-blog-area-box-information-statistic {
+        p, span, time {
+            margin: 0 .1rem;
+            font-size: 0.6rem;
+        }
+    }
+    
+    .m-home-blog-area-box-information {
+        padding-top: 0;
+    }
+}
+
+//Media Query for pc
+@media screen and (min-width: 992px){
+    .m-home-blog-area-box-information-person {
+        p {
+            font-size: .8rem;
+        }
+    }
+    .m-home-blog-area-box-information-statistic {
+        p, span, time {
+            margin: 0 .2rem;
+            font-size: 0.7rem;
+        }        
+    }
+}
+
+//Media Query for large pc
+@media screen and (min-width: 1200px) {
+    .m-home-blog-content {
+        @include wrap2($width2, $max-width2, $margin2);
+    }    
+}    

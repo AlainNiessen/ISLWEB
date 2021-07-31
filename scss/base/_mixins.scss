@@ -1,0 +1,17 @@
+/*Margin of 90% until breakpoint 1200px, after 1200px margin of 1140px
+                        => guarantee a contant margin and respect of 1140px max-width for content
+                        => Made for modules who need it, for header and footer classic definition by .wrap in base file scss*/
+
+//Mixin function for wrap different modules for smartphone and tablette
+@mixin wrap1($width1, $max-width1, $margin1) {
+    width: $width1;
+    max-width: $max-width1;
+    margin: $margin1;    
+}
+
+//Mixin function for wrap different modules for pc
+@mixin wrap2($width2, $max-width2, $margin2) {
+    width: $width2;
+    max-width: $max-width2;
+    margin: $margin2;    
+}

@@ -1,0 +1,122 @@
+//1st single module in blog-detail page and 1st module in main content - blog detail
+.m-blog-detail-bg {
+    background-color: #faf9ff; //Color copy by using pipette on photoshop
+}
+.m-blog-detail {
+    @include wrap1($width1, $max-width1, $margin1);
+    margin-top: 4rem;
+}
+
+.m-blog-detail-article-content-text-info {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0;
+    ul {
+        padding: 0;
+        margin: 1rem 0;
+    }
+    li {
+        display: inline-block;
+        list-style: none;
+    }
+    a {
+        color: black;
+        text-decoration: none;
+        padding: .8rem;
+        font-size: 1.1rem; 
+        &:hover {
+            color: map-get($map: $colors, $key: 'title');
+        }       
+    }
+}
+
+.m-blog-detail-article-content-text-info-title h3{
+        color: black;
+        margin-bottom: 2rem;
+        font-size: 1rem;
+}
+
+.m-blog-detail-article-content-text-info-user {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    p, time {
+        width: 50%;
+        margin-bottom: 1rem;
+        span {
+            color: black;
+            font-weight: bold;
+            padding-left: .5rem;
+        }
+    }
+    
+}
+
+.m-blog-detail-article-content-text-main-article {
+    h2 {
+        text-transform: capitalize;
+        margin: 1rem 0;
+    }
+    p {
+        margin-bottom: 2rem;
+    }
+}
+
+.m-blog-detail-textbox-1 {
+    background-color: map-get($map: $colors, $key: 'couleur3');
+    display: block;
+    p {
+        padding: 1rem;
+    }
+}
+
+.m-blog-detail-textbox-2 {
+    margin: 2rem 0;
+    padding-bottom: 3rem;
+    border-bottom: 0.8px solid #eee;
+    p {
+        margin-bottom: 2rem;
+    }
+}
+
+.m-blog-detail-textbox-2-illustration {
+    display: flex;
+    justify-content: space-between;
+    height: 10rem;
+    margin-bottom: 2rem;
+    img {
+        width: 45%;
+        
+    }
+}
+
+//Media query for tablette
+@media screen and (min-width: 768px) {
+    .m-blog-detail-article-content-text-info {
+        text-align: right;
+        padding-right: 1.5rem;
+        a {
+            padding: .5rem;
+            font-size: 1rem;        
+        }
+    }
+    .m-blog-detail-article-content-text-info-user {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        p, time {
+            width: 100%;
+            margin-bottom: .5rem;
+        }  
+    } 
+    .m-blog-detail-textbox-2-illustration {        
+        height: 15rem;        
+    }     
+}
+
+//Media Query for large pc
+@media screen and (min-width: 1200px) {
+    .m-blog-detail {
+        @include wrap2($width2, $max-width2, $margin2);
+        margin-top: 4rem;
+    }    
+}    

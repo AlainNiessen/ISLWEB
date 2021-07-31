@@ -1,0 +1,84 @@
+//1st single module in blog page - banner width bg image AND background color main
+.m-blog-bg-color {
+    background-color: #faf9ff; //Color copy by using pipette on photoshop
+}
+.m-blog-banner {
+    position: relative;
+}
+.m-blog-banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url("../img/tinypng/blog-banner-illustration-s.jpg") no-repeat center;
+    background-size: cover;
+    filter: brightness(70%); //Brightness effect on image
+    width: 100%;
+    height: 600px;
+}
+ 
+.m-blog-banner-content {
+    @include wrap1($width1, $max-width1, $margin1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+    text-align: center;
+    position: relative; // This will make the content stack on top of the ::before and no filter
+    .m-blog-banner-content-title-link, p {
+        color: map-get($map: $colors, $key: 'couleur3');
+        margin-bottom: 2rem;
+    }
+    .m-blog-banner-content-title-link {
+        text-transform: capitalize;
+        line-height: 2rem;
+        background-color: transparent;
+    } 
+    h1 {
+        a {
+            text-decoration: none;
+            color: black;
+            padding: .8rem 1.5rem;
+            background-color: map-get($map: $colors, $key: 'couleur3');
+            border: none;
+            &:hover {
+                color: map-get($map: $colors, $key: 'title');
+            }
+        }
+    }
+}
+
+.m-blog-main-content-box-link {
+    text-decoration: none;
+    color: black;
+    background-color: map-get($map: $colors, $key: 'couleur3');
+    padding: .8rem 1.5rem;
+    margin: 1rem 0 0 1rem;
+    text-transform: capitalize;
+    display: inline-block;
+    &:hover {
+        color: map-get($map: $colors, $key: 'title');
+    }
+}
+
+//Media Query for tablette
+@media screen and (min-width: 768px) {
+    .m-blog-banner::before {
+        background: url("../img/tinypng/blog-banner-illustration-m.jpg") no-repeat center;
+    }
+}
+
+//Media Query for pc
+@media screen and (min-width: 992px) {
+    .m-blog-banner::before {
+        background: url("../img/tinypng/blog-banner-illustration-l.jpg") no-repeat center;
+    }
+}
+
+//Media Query for large pc
+@media screen and (min-width: 1200px) {
+    .m-blog-banner-content {
+        @include wrap2($width2, $max-width2, $margin2);
+    }
+}    

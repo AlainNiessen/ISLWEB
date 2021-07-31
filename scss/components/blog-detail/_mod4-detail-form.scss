@@ -1,0 +1,82 @@
+//4th single module in blog-detail page and 4rd module in main content - contact formular
+.m-blog-detail-form {
+    border: 0.8px solid #eee;  
+    margin-bottom: 3rem;  
+    h3 {
+        text-transform: capitalize;
+        text-align: center;
+        padding: 2rem 0;
+    }
+}
+
+.form-2 {
+    display: flex;
+    flex-direction: column;   
+    width: 100%;    
+    input, textarea {
+        display: block;
+        width: 100%;
+        max-width: 90%;
+        margin: 0 auto;
+        height: 2rem;
+        margin-bottom: 2rem; 
+        border: none; 
+        &::placeholder {
+            padding-left: .5rem;
+        }      
+    }
+    textarea {
+        height: 10rem;
+        padding-top: .5rem;
+    }
+    .m-blog-detail-form-submit {
+        width: 50%;
+        margin: 0 auto;
+        .sub {
+            text-transform: uppercase;
+            color: map-get($map: $colors, $key: 'couleur3');
+            background-color: map-get($map: $colors, $key: 'btn1'); //For browsers that do not support gradients
+            background-image: linear-gradient(to right, map-get($map: $colors, $key: 'btn1'), map-get($map: $colors, $key: 'btn2') ); //For gradient effect
+            border: none;
+            height: auto;
+            padding: 1rem 0;
+            &:hover {
+                background-color: map-get($map: $colors, $key: 'btn1'); //For browsers that do not support gradients
+                background-image: linear-gradient(to left, map-get($map: $colors, $key: 'btn1'), map-get($map: $colors, $key: 'btn2') ); //For gradient effect
+            }
+        }        
+    }
+}
+
+//Media Query for tablette
+@media screen and (min-width: 768px) {
+    .m-blog-detail-form-data {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 90%;
+        margin: 0 auto;        
+    }
+    .m-blog-detail-form-data-box {
+        width: 45%;
+        input {
+            max-width: 100%;
+        }
+    }
+    .form-2 {
+        .m-blog-detail-form-submit {
+            width: 40%;
+            
+        }
+    }
+}
+
+//Media Query for pc
+@media screen and (min-width: 992px) {
+    .form-2 {
+        .m-blog-detail-form-submit {
+            width: 30%;            
+        }
+    }
+}

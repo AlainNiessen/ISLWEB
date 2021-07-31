@@ -1,0 +1,61 @@
+//2nd single module in home page - My offered services
+.m-home-services {
+    @include wrap1($width1, $max-width1, $margin1);   
+}
+.m-home-services-area {
+    margin-bottom: 4rem;
+}
+
+.m-home-services-intro-text, .m-home-services-area-box {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.m-home-services-intro-text h1 {
+    margin-bottom: 1rem;
+    text-transform: capitalize;
+}
+
+.m-home-services-area-box {
+    h3 {
+        text-transform: capitalize;
+    }
+    .m-home-services-area-box-icon, h3 {
+        margin-bottom: 1.5rem;
+    }
+}
+
+.m-home-services-area-box-icon {
+    span {
+        font-size: 2rem;
+    }
+}
+
+//Decoration style for one word in ''
+.quotation::before {
+    content:"'";
+}
+
+.quotation::after {
+    content:"'";
+}
+
+//Media Query for tablette
+@media screen and (min-width: 768px) { 
+    
+    .m-home-services-intro-text {
+        width: 100%;
+        max-width: 70%;
+        margin: 3rem auto;        
+    }
+    .m-home-services-area-box {
+        margin: 0 1rem 2rem 1rem;
+    }
+}
+
+//Media Query for large pc
+@media screen and (min-width: 1200px) {
+    .m-home-services {
+        @include wrap2($width2, $max-width2, $margin2);
+    }
+}    

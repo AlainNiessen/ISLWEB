@@ -1,0 +1,119 @@
+//Layout for footer
+.l-footer {
+    background-color: #04091e; //Color copy by using pipette on photoshop
+    h3 {
+        color: map-get($map: $colors, $key: 'couleur3');
+        text-transform: capitalize;
+        margin-bottom: 2rem;
+    }
+    p {
+        margin-bottom: 1.5rem;
+    }
+    .wrap {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.l-footer-about-me {
+    margin-top: 5rem;
+}
+
+.text-decoration {
+    color: map-get($map: $colors, $key: 'title');
+}
+
+.l-footer-newsletter-email {
+    margin-bottom: 1.5rem;
+}
+
+.l-footer-newsletter-form {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    input, button {
+        margin: 0;
+        height: 2rem;
+    }
+    input {
+        flex: 0 0 80%;
+        max-width: 80%;
+        &::placeholder {
+            padding-left: 1rem;
+        }
+    }
+    button {
+        flex: 0 0 20%;
+        max-width: 20%;
+        background-color: map-get($map: $colors, $key: 'title');
+        border: none;
+        span {
+            color: map-get($map: $colors, $key: 'couleur3');
+        }
+    }
+}
+
+.l-footer-social-media {
+    margin-bottom: 5rem;
+    ul {
+        padding: 0;
+        margin: 0;
+    }
+    li {
+        display: inline-block;
+        list-style: none;
+    }
+    a {
+        color: map-get($map: $colors, $key: 'couleur3');
+        text-decoration: none;
+        padding: 1.2rem;
+        font-size: 1.1rem;
+        &:hover {
+            color: map-get($map: $colors, $key: 'title');
+        }
+    }    
+}
+
+//Media Query for tablette
+@media screen and (min-width: 768px) {
+    .l-footer {
+        height: 28rem;
+        .wrap {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            height: 28rem
+        }
+    }
+    .l-footer-about-me {
+        margin-top: 0;
+    }
+    .l-footer-about-me, .l-footer-newsletter {
+        padding-right: 1.2rem;
+    }    
+    .l-footer-social-media {
+        h3, p {
+            padding-left: .5rem;
+        }
+        a {
+           padding: .5rem;
+           font-size: .9rem;
+        }
+    }
+}
+
+//Media Query for pc
+@media screen and (min-width: 992px) {
+    .l-footer-social-media {
+        h3, p {
+            padding-left: 1rem;
+        }
+        a {
+           padding: 1rem;
+           font-size: 1.1rem;
+        }
+    }
+}

@@ -1,0 +1,48 @@
+//base import
+@import "base/variables";
+@import "base/grid";
+@import "base/mixins";
+@import "base/base";
+
+//layout import
+@import "layout/header";
+@import "layout/menu";
+@import "layout/footer";
+
+/* For all components I define the modules in single modules per page (unique modules) and looping modules
+    => looping modules are modules with different semantic content (html) on different pages, BUT identic decoration settings
+    => Variable lists are managing each loops for looping modules (list name = module name AND variables names = pages names)
+    => ex: Portofolio page has no single modules, but two looping modules */
+
+//looping modules - modules with same settings
+@import "components/looping-modules/loop-mod1-navigation";
+@import "components/looping-modules/loop-mod2-banner-label";
+@import "components/looping-modules/loop-mod3-aside";
+@import "components/looping-modules/loop-mod4-projects";
+
+//single modules home page import
+@import "components/home/mod1-personal-details";
+@import "components/home/mod2-services";
+@import "components/home/mod3-counter";
+@import "components/home/mod4-blog";  
+
+
+//single modules about me page import
+@import "components/about/mod1-personal-details";
+@import "components/about/mod2-tools";
+@import "components/about/mod3-feedback";
+
+// single modules contact page import
+@import "components/contact/mod1-address-form";
+
+// single modules blog page import
+@import "components/blog/mod1-banner";
+@import "components/blog/mod2-blog-links";
+@import "components/blog/mod3-blog-overview";
+
+
+// single modules blog detail page import
+@import "components/blog-detail/mod1-detail-content";
+@import "components/blog-detail/mod2-blog-nav";
+@import "components/blog-detail/mod3-comments";
+@import "components/blog-detail/mod4-detail-form";

@@ -1,0 +1,65 @@
+//Variable map for colors
+$colors: (
+    'btn1': #8490ff,
+    'btn2': #62bdfc,
+    'couleur3': #fff,
+    'txt': #777777,
+    'title': #8490ff,
+    'bannerBg1': #8490ff,
+    'bannerBg2': #62bdfc
+);
+
+//Variables for grid system - loop in grid.scss
+$grid-columns: 12;
+
+$screen-sizes: (
+    'md': 768px, //Breakpoint from smartphone to tablette
+    'lg': 992px, //Breakpoint from tablette to desktop
+    'xl': 1200px //Breakpoint from desktop to large desktop (breakpoints inspired by https://www.mediaevent.de/css/breakpoints.html)
+);
+
+//Variable list for font-size
+$fontsize: (
+    2rem,
+    1.6rem,
+    1.1rem
+);
+
+/*Variables for mixins => Margin of 90% until breakpoint 1200px, after 1200px margin of 1140px
+                        => garanteed a contant margin and respect of 1140px max-width for content*/
+//Variables for mixin wrap for smartphone and tablette
+$width1: 100%;
+$max-width1: 90%;
+$margin1: 0 auto;
+
+//Variables for mixin wrap for pc
+$width2: 100%;
+$max-width2: 1140px;
+$margin2: 0 auto;
+
+//Variable lists for looping modules - modules with same settings with possibility to adapt with if-condition
+//Variable list for looping module navigation
+$navigation: (
+    'about',
+    'portfolio',
+    'contact',
+    'blog-detail'
+);
+
+//Variable list for looping module banner-label
+$banner: (
+    'home',
+    'about'
+);
+
+//Variable list for looping module aside
+$aside: (
+    'blog-main',
+    'blog-detail'
+);
+
+//Variable list for looping module projects
+$projects: (
+    'home',
+    'portfolio'
+);

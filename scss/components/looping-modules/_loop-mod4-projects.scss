@@ -1,0 +1,117 @@
+/*Looping module in home page and portfolio page - projects
+    => modules with same settings and with possibility to change with if-condition
+    => in case of individual changing => if condition*/
+@each $page in $projects {
+    .m-#{$page}-projects {
+        @include wrap1($width1, $max-width1, $margin1);
+        margin-top: 4rem;
+        margin-bottom: 4rem;
+    }
+    
+    .m-#{$page}-projects-intro-text {
+        text-align: center;
+        margin: 5rem 0;
+        h1 {
+            margin-bottom: 1rem;
+            text-transform: capitalize;
+        }
+    }
+        
+    .m-#{$page}-projects-area-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        h3 {
+            text-transform: capitalize;
+            margin-top: .5rem;
+            a {
+                text-decoration: none;
+                color: black;            
+                &:hover {
+                    color: map-get($map: $colors, $key: 'title');
+                }
+            }
+        }
+        p {
+            margin-bottom: 2rem;
+        }
+    }
+    
+    /*Project gallery => boxes with color background and filled with pictures
+                        =>hover effect make picture transparent and icon glasses appear
+                          => both (picture and icon) are links*/
+    .m-#{$page}-projects-area-box-illustration {
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+        display: block;
+        position: relative; //For place icon in absolute
+        background-color: map-get($map: $colors, $key: 'btn1'); //For browsers that do not support gradients
+        background-image: linear-gradient(to right, map-get($map: $colors, $key: 'btn1'), map-get($map: $colors, $key: 'btn2') ); //For gradient effect
+        &:hover {
+            .m-#{$page}-projects-area-box-illustration-pic {
+                img {
+                    opacity: .2;
+                }
+            }
+            .m-#{$page}-projects-area-box-illustration-icon {
+                display: block;
+                opacity: 1;
+            }
+        }
+        
+    }
+    
+    .m-#{$page}-projects-area-box-illustration-pic {
+        img {
+            border-radius: 10px;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            -ms-border-radius: 10px;
+            -o-border-radius: 10px;
+            width: 100%;
+            height: 100%;
+            display: block; //to fill all the box, otherwhise there is a little marge on the bottom!!!    
+        }
+    }
+    
+    //Icon glasses unvisible
+    .m-#{$page}-projects-area-box-illustration-icon {
+        position: absolute;
+        z-index: 99999;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        display: none;
+    }
+}
+
+//Media Query for tablette
+@media screen and (min-width: 768px) { 
+    @each $page in $projects {   
+        .m-#{$page}-projects-intro-text {
+            width: 100%;
+            max-width: 70%;
+            margin: 6rem auto;        
+        }
+        .m-#{$page}-projects-area-box {
+            margin: 0 1rem 2rem 1rem;
+        }
+    }
+}
+
+//Media Query for large pc
+@media screen and (min-width: 1200px) {
+    @each $page in $projects {
+        .m-#{$page}-projects {
+            @include wrap2($width2, $max-width2, $margin2);
+        }
+    }
+}    
